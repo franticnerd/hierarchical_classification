@@ -60,7 +60,8 @@ def parse_xml(xml_file):
 def tokenize(text):
     # print text
     tokenizer = TextParser(stopword_file = 'stopwords.txt')
-    tokens = tokenizer.parse_words(text)
+    # tokens = tokenizer.parse_words(text)
+    tokens = tokenizer.parse_words(text, stem=False)
     return tokens
 
 def append_to_file(output_file, docs):
