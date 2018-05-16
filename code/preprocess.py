@@ -75,6 +75,6 @@ if __name__ == '__main__':
     # input_dir = '/Users/chao/data/source/rcv1/sample/'
     # output_file = '/Users/chao/data/projects/hierarchical-classification/rcv1/sample/docs.txt'
     input_dir = '/shared/data/yuningm2/datasets/rcv1/'
-    output_file = '/shared/data/czhang82/projects/hierarchical_classification/rcv1/docs.txt'
+    output_file = '/shared/data/czhang82/projects/hierarchical_classification/rcv1/docs-nostem.txt'
     parse_dataset(input_dir, output_file)
 
