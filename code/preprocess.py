@@ -79,7 +79,7 @@ def append_to_file(output_file, docs):
             # s = doc_id + ' ' + ' '.join(tokens)
             doc_id, text = doc[0], doc[1]
             s = doc_id + ' ' + text
-            fp.write(s + '\n')
+            fp.write(s.encode('utf8') + '\n')
 
 if __name__ == '__main__':
     # input_dir = '/Users/chao/data/source/rcv1/sample/'
