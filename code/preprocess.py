@@ -67,7 +67,7 @@ def tokenize(text):
     # print text
     tokenizer = TextParser(stopword_file = 'stopwords.txt')
     # tokens = tokenizer.parse_words(text)
-    tokens = tokenizer.parse_words(text, stem=False)
+    tokens = tokenizer.parse_words(text, stem=True)
     return tokens
 
 def append_to_file(output_file, docs):
@@ -81,6 +81,7 @@ if __name__ == '__main__':
     # input_dir = '/Users/chao/data/source/rcv1/sample/'
     # output_file = '/Users/chao/data/projects/hierarchical-classification/rcv1/sample/docs.txt'
     input_dir = '/shared/data/yuningm2/datasets/rcv1/'
-    output_file = '/shared/data/czhang82/projects/hierarchical_classification/rcv1/docs-nostem.txt'
+    # output_file = '/shared/data/czhang82/projects/hierarchical_classification/rcv1/docs-nostem.txt'
+    output_file = '/shared/data/czhang82/projects/hierarchical_classification/rcv1/docs.txt'
     parse_dataset(input_dir, output_file)
 
