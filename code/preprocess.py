@@ -32,15 +32,16 @@ def parse_one_dir(data_dir):
     # for f in files[:1]:
     for f in files:
         doc = parse_one_file(f)
-        print 'File done: ' + doc[0]
+        # print 'File done: ' + doc[0]
         docs.append(doc)
     return docs
 
 def parse_one_file(xml_file):
     doc_id = get_doc_id(xml_file)
     text = parse_xml(xml_file)
-    tokens = tokenize(text)
-    return (doc_id, tokens)
+    # tokens = tokenize(text)
+    # return (doc_id, tokens)
+    return (doc_id, text)
 
 def get_doc_id(xml_file):
     item = xml_file.split('/')[-1]
@@ -59,6 +60,7 @@ def parse_xml(xml_file):
         for atype in e.findall('text'):
             for p in atype:
                 text += p.text
+                text += ' '
     except:
         pass
     return text
@@ -73,8 +75,10 @@ def tokenize(text):
 def append_to_file(output_file, docs):
     with open(output_file, 'a') as fp:
         for doc in docs:
-            doc_id, tokens = doc[0], doc[1]
-            s = doc_id + ' ' + ' '.join(tokens)
+            # doc_id, tokens = doc[0], doc[1]
+            # s = doc_id + ' ' + ' '.join(tokens)
+            doc_id, text = doc[0], doc[1]
+            s = doc_id + ' ' + text
             fp.write(s + '\n')
 
 if __name__ == '__main__':
