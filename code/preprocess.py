@@ -49,12 +49,18 @@ def get_doc_id(xml_file):
 def parse_xml(xml_file):
     e = xml.etree.ElementTree.parse(xml_file).getroot()
     text = ''
-    for atype in e.findall('headline'):
-        text += atype.text
+    try:
+        for atype in e.findall('headline'):
+            text += atype.text
+    except:
+        pass
     text += ' '
-    for atype in e.findall('text'):
-        for p in atype:
-            text += p.text
+    try:
+        for atype in e.findall('text'):
+            for p in atype:
+                text += p.text
+    except:
+        pass
     return text
 
 def tokenize(text):
